@@ -5,10 +5,22 @@
 
 int main(int argc, char *argv[])
 {
-    char src[30] = "happy C programming";
+    FILE* fp;
+    char str[100];
+    int i;
     
-    printf("문자열 \" %s\" 의 길이 : %i\n", src, strlen(src) );
-  
+    fp = fopen("sample. txt", "w");
+    
+    for(i=0;i<3;i++)
+    {
+             printf("imput a word: ");
+             scanf("%s", str);
+             fprintf(fp, "%s\n", str);
+    }
+    
+    fclose(fp);
+    
+    
   system("PAUSE");	
   return 0;
 }
